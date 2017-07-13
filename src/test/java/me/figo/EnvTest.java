@@ -20,6 +20,9 @@ public class EnvTest {
 	@Before
 	public void setUp() throws Exception {
 		conn = new FigoConnection(clientId, clientSecret, redirectUri, TIMEOUT, endpoint);
+		System.out.println("Id: " + clientId.substring(0, 4) + "...");
+		System.out.println("Secret: " + clientSecret.substring(0, 4) + "...");
+		System.out.println("Endpoint: " + endpoint);
 	}
 
 	@Test
