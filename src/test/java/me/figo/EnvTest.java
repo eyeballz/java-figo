@@ -22,7 +22,7 @@ public class EnvTest {
 		conn = new FigoConnection(clientId, clientSecret, redirectUri, TIMEOUT, endpoint);
 		System.out.println("Id: " + clientId.substring(0, 4) + "...");
 		System.out.println("Secret: " + clientSecret.substring(0, 4) + "...");
-		System.out.println("Endpoint: " + endpoint.substring(0, 8) + "...");
+		System.out.println("Endpoint: " + endpoint.substring(0, 12) + "...");
 	}
 
 	@Test
