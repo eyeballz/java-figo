@@ -1,7 +1,14 @@
 language: java
-install: mvn install -Dgpg.skip=true -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+install: mvn install -Dgpg.skip=true -DskipTests=true -Dmaven.javadoc.skip=true -B
+  -V
 script: mvn test
 jdk:
-  - oraclejdk7
-  - oraclejdk8
-  - openjdk7
+- oraclejdk7
+- oraclejdk8
+- openjdk7
+env:
+  global:
+  - secure: UUKGqUDurSNe74zzuAJ6bWwyPhGE3nmjpeR7jqyXs17LdkPUCITMEqn0ZwN7h/s4J1E6bNDk6kea/wFQDngL09pZX9mChrWxHgWEio/qPWfl+vggtEJc8csTDQAxy1G3JsrRY+EnphGcJllSa2C2KYU+OdBA76l8XxeaqKsKgC8=
+  - secure: GeDx/RpEiLITxZKcwA2jZncCwu0gI0JPMuG+BLKVN/xCEa3jC/66pzWL98BEzZ02l4bC5YSKjZS09i2pHeA+lkUIuIcGP+AyJFreF3VP28eCDfs7YHt4U6aj6Khm0pXtSQ/mU78r/3ay2/3Okp3XHsec/mU/RQ9RKQ5bezwaYBk=
+  - secure: JgtHusYXNSteDEhDlG/nLXFWD9C+nRvmLzjvQ8gFA1gHbyDsysiPdku5ZA6EWMfb5tMu8RjO1fMKz1wH9fVUAMk1HztSblAcl4iHyq3usDpBbqHJs921Iyv9XmrBTAxcqQa3CzdzH9eMn+v8pFAfOdQpVp+7kFbnwFqm8aB3Iq8=
+  - secure: jsepUezA2iliZqqK34xV/iU106G5VkK5ijjE6vlrmDMWXdU1qDOoj1ZGhkKw1Bt/34nL38SzjgKrizEoR+RTLbAae74zljzdh6TMfSVMPcppqrF47213Bc6+FNaI+qipEw0z2ZTP/23OUkCk/McMl/DI3n3NF44ZCtqPxhWem1Q=
