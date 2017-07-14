@@ -56,7 +56,7 @@ session.setProxy(proxy);
 // now do your API calls
 ```
 
-You can add valid SSL fingerprints by adding them to the `FIGO_API_FINGERPRINTS` environment variable. Fingerprints
+You can add valid SSL fingerprints by adding them to the `FIGO_SSL_FINGERPRINT` environment variable. Fingerprints
 need to be added in HEX format without column delimiters. A column delimiter is used to indicate the next element in
 the list of fingerprints.
 
@@ -73,7 +73,7 @@ session.setTrustManager(trustManager);
 // now do your API calls
 ```
 
-To connect to the staging system of figo, you need to set the `FIGO_API_FINGERPRINTS` environment variable with the staging SHA256 fingerprint (`D0039EF08FBD48678671CE9DA554248163D7D94DEDF16A55F052C70AAB7BB89D`)
+To connect to the staging system of figo, you need to set the `FIGO_SSL_FINGERPRINT` environment variable with the staging SHA256 fingerprint (`D0039EF08FBD48678671CE9DA554248163D7D94DEDF16A55F052C70AAB7BB89D`)
 
 
 A more detailed documentation of the figo connect API can be found at http://docs.figo.io.

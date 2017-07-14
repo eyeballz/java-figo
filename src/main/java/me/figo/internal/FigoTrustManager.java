@@ -93,7 +93,7 @@ public class FigoTrustManager implements X509TrustManager {
     }
 
     private static List<String> getFingerprintsFromEnv()    {
-        String fingerprintList = System.getenv("FIGO_API_FINGERPRINTS");
+        String fingerprintList = System.getenv("FIGO_SSL_FINGERPRINT");
         if(fingerprintList!=null)
         	return Arrays.asList(fingerprintList.split(":"));
         else
