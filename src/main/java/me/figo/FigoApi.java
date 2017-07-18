@@ -156,7 +156,7 @@ public class FigoApi {
         if (connection instanceof HttpsURLConnection) {
             // Setup and install the trust manager
             try {
-                final SSLContext sc = SSLContext.getInstance("SSL");
+				final SSLContext sc = SSLContext.getInstance("TLSv1.2");
                 sc.init(null, new TrustManager[] { trustManager }, new java.security.SecureRandom());
 				FigoSocketFactory figoSocketFactory = new FigoSocketFactory(sc.getSocketFactory());
 				((HttpsURLConnection) connection).setSSLSocketFactory(figoSocketFactory);
