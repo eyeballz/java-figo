@@ -59,5 +59,8 @@ public class GsonTest {
 
 		CredentialLoginRequest request = new CredentialLoginRequest("username", "password");
 		Assert.assertEquals("{\"grant_type\":\"password\",\"username\":\"username\",\"password\":\"password\"}", g.toJson(request));
+
+		CredentialLoginRequest scopedRequest = new CredentialLoginRequest("username", "password", "scope");
+		Assert.assertEquals("{\"grant_type\":\"password\",\"username\":\"username\",\"password\":\"password\",\"scope\":\"scope\"}", g.toJson(scopedRequest));
 	}
 }

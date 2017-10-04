@@ -14,11 +14,20 @@ public class CredentialLoginRequest {
     
     @Expose
     private String password;
+
+    @Expose
+	private String scope;
     
     public CredentialLoginRequest(String username, String password) {
         this.username = username;
         this.password = password;
     }
+
+	public CredentialLoginRequest(String username, String password, String scope) {
+		this.username = username;
+		this.password = password;
+		this.scope = scope;
+	}
 
 	public String getGrantType() {
 		return grant_type;
@@ -39,6 +48,12 @@ public class CredentialLoginRequest {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-    
-    
+
+	public String getScope() {
+		return scope;
+	}
+
+	public void setScope(String scope) {
+		this.scope = scope;
+	}
 }

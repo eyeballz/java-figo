@@ -184,6 +184,24 @@ public class FigoConnection extends FigoApi {
     }
 
     /**
+     * Login an user with his figo username and password credentials and add a specific scope
+     * @param username
+     * 			the user's figo username, this is the `email` from the `CreateUserRequest`
+     * @param password
+     * 			the user's figo password
+     * @param scope
+     *          the desired scope for the generated token
+     * @return Dictionary with the following keys: - `access_token` - the access token for data access. You can pass it into `FigoConnection.open_session` to
+     *         get a FigoSession and access the users data - `expires_in` - absolute time the access token expires
+     *
+     * @exception FigoException Base class for all figoExceptions
+     * @exception IOException IOException
+     */
+    public TokenResponse credentialLogin(String username, String password, String scope) throws IOException, FigoException	{
+        return this.queryApi("/auth/token", new CredentialLoginRequest(username, password, scope), "POST", TokenResponse.class);
+    }
+
+    /**
      * Revoke a granted access or refresh token and thereby invalidate it. Note: this action has immediate effect, i.e. you will not be able use that token
      * anymore after this call.
      *
