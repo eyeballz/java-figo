@@ -1,6 +1,7 @@
 package me.figo;
 
 import com.google.gson.Gson;
+import me.figo.internal.CredentialLoginRequest;
 import me.figo.internal.SetupAccountCredentials;
 import me.figo.internal.SetupAccountRequest;
 import me.figo.models.AdditionalTransactionInfo;
@@ -49,5 +50,14 @@ public class GsonTest {
 
 		SetupAccountCredentials credentials = new SetupAccountCredentials(Arrays.asList("username", "pin"));
 		Assert.assertEquals("[\"username\",\"pin\"]", g.toJson(credentials));
+	}
+
+	@Test
+	public void testCredentialLoginSerialization() {
+		FigoApi api = new FigoApi("", 0);
+		Gson g = api.createGson();
+
+		CredentialLoginRequest request = new CredentialLoginRequest("username", "password");
+		Assert.assertEquals("{\"grant_type\":\"password\",\"username\":\"username\",\"password\":\"password\"}", g.toJson(request));
 	}
 }
